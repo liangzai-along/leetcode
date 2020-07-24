@@ -1,4 +1,4 @@
-package array;
+package question.array;
 
 /**
  * @Author: xiaolong
