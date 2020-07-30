@@ -8,6 +8,9 @@ package question.string;
  */
 public class _2_替换空格 {
     public String replaceSpace(StringBuffer str) {
+
+        // 使用库函数
+        //return str.toString().replaceAll("\\s", "%20");
         // 边界
         if (str == null) return null;
         StringBuilder stringBuilder = new StringBuilder();
