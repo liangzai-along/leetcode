@@ -1,7 +1,8 @@
 package datastructure.sort;
 
-import com.xiaolong.tools.Integers;
-import com.xiaolong.tools.Times;
+
+import datastructure.tools.Integers;
+import datastructure.tools.Times;
 
 /**
  * @Author: xiaolong
