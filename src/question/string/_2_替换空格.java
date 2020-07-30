@@ -38,14 +38,20 @@ public class _2_替换空格 {
         // 两个尾指针，从尾开始扫描，不需要移动太多次
         int p1 = oldLength - 1;
         int p2 = newLength - 1;
+        // 解决连续空格替换成一个%20
+        boolean isFirst = true;
         while (p1 != p2) {
             if (str.charAt(p1) == ' ') {
-                str.setCharAt(p2--, '0');
-                str.setCharAt(p2--, '2');
-                str.setCharAt(p2--, '%');
-                p1--;
+                if (isFirst) {
+                    str.setCharAt(p2--, '0');
+                    str.setCharAt(p2--, '2');
+                    str.setCharAt(p2--, '%');
+                    p1--;
+                    isFirst = false;
+                }
             } else {
                 str.setCharAt(p2--, str.charAt(p1--));
+                isFirst = true;
             }
         }
         return str.toString();
