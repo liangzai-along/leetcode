@@ -8,6 +8,8 @@ package question.string;
  */
 public class _2_替换空格 {
     public String replaceSpace(StringBuffer str) {
+        // 边界
+        if (str == null) return null;
         StringBuilder stringBuilder = new StringBuilder();
         for (int i = 0; i < str.length(); i++){
             char c = str.charAt(i);
