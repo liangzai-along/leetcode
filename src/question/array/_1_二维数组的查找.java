@@ -8,6 +8,12 @@ package question.array;
  */
 public class _1_二维数组的查找 {
 
+    /**
+     * 规律查找
+     * @param target
+     * @param array
+     * @return
+     */
     public boolean find(int target, int[][] array) {
 
         if (array == null || array.length == 0 || array[0].length == 0) {
@@ -28,4 +34,29 @@ public class _1_二维数组的查找 {
         }
     }
 
+    /**
+     * 二分查找
+     */
+    public boolean TwoFind(int target, int[][] array) {
+        if (array == null || array.length == 0 || array[0].length == 0) {
+            return false;
+        }else {
+            for (int i = 0; i < array.length; i++) {
+                int low = 0;
+                int high = array[i].length - 1;
+                while (low <= high) {
+                    int mid = (low + high) >> 1;
+                    if (target > array[i][mid]) {
+                        low = mid + 1;
+                    }else if (target < array[i][mid]) {
+                        high = mid -1;
+                    }else {
+                        return true;
+                    }
+                }
+
+            }
+            return false;
+        }
+    }
 }
