@@ -1,5 +1,6 @@
 package question.array;
 
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -67,5 +68,32 @@ public class _28_数组中出现次数超过一半的数字 {
         }
         return 0;
     }
+
+    /**
+     * 利用排序
+     * @param array
+     * @return
+     */
+    public int MoreThanHalfNum_Solution2(int [] array) {
+        if (array == null || array.length == 0) {
+            return 0;
+        }
+        if (array.length == 1) {
+            return array[0];
+        }
+        Arrays.sort(array);
+        int count = 0;
+        for (int i = 0;i < array.length;i++){
+            if (array[i] == array[array.length/2]){
+                count++;
+            }
+        }
+        if (count > array.length/2){
+            return array[array.length/2];
+        }else{
+            return 0;
+        }
+    }
+
 
 }
