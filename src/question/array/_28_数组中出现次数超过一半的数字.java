@@ -15,6 +15,9 @@ public class _28_数组中出现次数超过一半的数字 {
      * @return
      */
     public int MoreThanHalfNum_Solution(int[] array) {
+        if (array == null || array.length == 0) {
+            return 0;
+        }
         int[] hashtable = new int[100];
         for (int i = 0; i < array.length; i++) {
             if (hashtable[array[i]] > 0) {
