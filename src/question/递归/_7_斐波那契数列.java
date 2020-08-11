@@ -5,7 +5,7 @@ package question.递归;
  * @email: xlshi1996@163.com
  * @Date: 2020/8/11 18:39
  */
-public class _斐波那契数列 {
+public class _7_斐波那契数列 {
 
     /**
      * 判断是否可以利用递归：能否将问题拆成小问题，分解
