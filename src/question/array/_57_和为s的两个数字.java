@@ -37,6 +37,7 @@ public class _57_和为s的两个数字 {
         }
         for (int num:nums) {
             int e = target - num;
+            // 这里要比直接查找数组快
             if (set.contains((e))){
                 return new int[] {num, e};
             }
