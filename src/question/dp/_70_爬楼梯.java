@@ -16,13 +16,12 @@ public class _70_爬楼梯 {
     // dp解法
     public int climbStairs2(int n) {
         if (n <= 0 ) return 0;
-        if (n == 1 || n == 2) return n;
-        int first = 1;
-        int second = 2;
+        int[] dp = new int[n+1];
+        dp[0] = 1;
+        dp[1] = 2;
         for (int i = 3; i <= n; i++) {
-            second = first + second;
-            first = second - first;
+            dp[i] = dp[i-1] + dp[i-2];
         }
-        return second;
+        return dp[n];
     }
 }
