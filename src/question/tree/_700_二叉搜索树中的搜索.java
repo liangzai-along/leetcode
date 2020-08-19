@@ -6,6 +6,7 @@ import javax.swing.tree.TreeNode;
  * @Author: xiaolong
  * @email: xlshi1996@163.com
  * @Date: 2020/8/19 10:45
+ * 地址：https://leetcode-cn.com/problems/search-in-a-binary-search-tree/
  */
 public class _700_二叉搜索树中的搜索 {
     /**
