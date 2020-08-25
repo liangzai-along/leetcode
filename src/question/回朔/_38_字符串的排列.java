@@ -48,7 +48,7 @@ public class _38_字符串的排列 {
                 continue;
             }
 
-            // 剪枝， used[i-1] 被撤销
+            // 剪枝， used[i-1] 被撤销，这里不思很懂
             if (i > 0 && nums[i] == nums[i-1] && !used[i-1]) {
                 continue;
             }
