@@ -64,4 +64,27 @@ public class _22_括号生成 {
             track.deleteCharAt(track.length() - 1);
         }
     }
+
+    // 深度优先遍历，用减法，上下用的是加法
+    // 参考：https://leetcode-cn.com/problems/generate-parentheses/solution/ru-men-ji-bie-de-hui-su-fa-xue-hui-tao-lu-miao-don/
+    public void dfs(StringBuilder track, List<String> res, int left, int right) {
+        if (left == 0 && right == 0) {
+            res.add(track.toString());
+            return;
+        }
+
+        // 剪枝
+        if (left > right) return;
+
+        if (left > 0) {
+            track.append('(');
+            dfs(track, res, left-1, right);
+            track.deleteCharAt(track.length() - 1);
+        }
+        if (right > 0) {
+            track.append(')');
+            dfs(track, res, left, right-1);
+            track.deleteCharAt(track.length() - 1);
+        }
+    }
 }
