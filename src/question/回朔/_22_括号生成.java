@@ -39,4 +39,29 @@ public class _22_括号生成 {
         }
         return balance == 0;
     }
+
+    public List<String> generateParenthesis2(int n) {
+        List<String> res = new ArrayList<>();
+        StringBuilder track = new StringBuilder();
+        backtrack(res, track, 0 ,0, n);
+        return res;
+    }
+
+    // 回朔法进行改进，不是每次都添加
+    public void backtrack(List<String> res, StringBuilder track, int open, int close, int max) {
+        if (track.length() == max * 2) {
+            res.add(track.toString());
+            return;
+        }
+        if (open < max) {
+            track.append('(');
+            backtrack(res, track, open+1, close, max);
+            track.deleteCharAt(track.length() - 1);
+        }
+        if (close < open) {
+            track.append(')');
+            backtrack(res, track, open, close+1, max);
+            track.deleteCharAt(track.length() - 1);
+        }
+    }
 }
