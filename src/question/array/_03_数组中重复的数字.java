@@ -26,6 +26,13 @@ public class _03_数组中重复的数字 {
     // 改进方法，根据题目给的数组特性，优化空间复杂度
     // 思路：将数组所有数归位
     public int findRepeatNumber2(int[] number) {
+        // 边界条件
+        if (number == null || number.length <= 0) return -1;
+        for (int i = 0; i < number.length; i++) {
+            if (number[i] < 0 || number[i] > number.length-1) {
+                return -1;
+            }
+        }
         int res = number[0];
         for (int i = 0; i < number.length; i++) {
             while (i != number[i]) {
