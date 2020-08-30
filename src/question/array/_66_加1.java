@@ -12,13 +12,7 @@ public class _66_加1 {
         int[] res = plus(digits, len);
         if (res[0] == 0) {
             res = new int[len+2];
-            for (int i = 0; i <= len+1; i++) {
-                if (i == 0) {
-                    res[i] = 1;
-                } else {
-                    res[i] = 0;
-                }
-            }
+            res[0] = 1;
         }
         return res;
     }
@@ -37,6 +31,19 @@ public class _66_加1 {
             plus(digits, k-1);
 
         }
+        return digits;
+    }
+
+    // 也可以使用循环来进行，每个都加1.然后取余,空间复杂度要比递归的低
+    public int[] plusOne2(int[] digits) {
+
+        for (int i = digits.length - 1; i >= 0; i--) {
+            digits[i]++;
+            digits[i] = digits[i] % 10;
+            if (digits[i] != 0) return digits;
+        }
+        digits = new int[digits.length + 1];
+        digits[0] = 1;
         return digits;
     }
 }
