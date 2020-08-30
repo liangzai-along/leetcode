@@ -22,4 +22,22 @@ public class _03_数组中重复的数字 {
         }
         return res;
     }
+
+    // 改进方法，根据题目给的数组特性，优化空间复杂度
+    // 思路：将数组所有数归位
+    public int findRepeatNumber2(int[] number) {
+        int res = number[0];
+        for (int i = 0; i < number.length; i++) {
+            while (i != number[i]) {
+                if (number[i] == number[number[i]]) {
+                    res = number[i];
+                    return res;
+                }
+                int temp = number[i];
+                number[i] = number[temp];
+                number[temp] = temp;
+            }
+        }
+        return -1;
+    }
 }
