@@ -42,7 +42,6 @@ public class _144_二叉树的前序遍历 {
             if (node.left != null) {
                 stack.push(node.left);
             }
-        }
         return res;
     }*/
 }
