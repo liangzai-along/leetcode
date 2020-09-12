@@ -10,7 +10,7 @@ public class _6_Z字形变换 {
     // 思路：找规律
     public String convert(String s, int numRows) {
         int len = s.length();
-        if (len == 1) return s;
+        if (numRows == 1) return s;
         StringBuilder sb = new StringBuilder();
         for (int i = 0; i < numRows; i++) {
             // 主要
