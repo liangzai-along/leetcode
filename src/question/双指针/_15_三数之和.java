@@ -23,7 +23,7 @@ public class _15_三数之和 {
             if (nums[i] > 0) return res;
             // 排除相同元素
             if (i > 0 && nums[i] == nums[i+1]) continue;
-            int left = i;
+            int left = i+1;
             int right = nums.length-1;
             while (left < right) {
                 int tempSum = nums[i] + nums[left] + nums[right];
