@@ -21,7 +21,7 @@ public class _443_两数之和2 {
         int right = nums.length-1;
         int count = 0;
         while (left < right) {
-            if (nums[left] + nums[right] < target) {
+            if (nums[left] + nums[right] <= target) {
                 left++;
             } else {
                 // 一个数有right-left种
