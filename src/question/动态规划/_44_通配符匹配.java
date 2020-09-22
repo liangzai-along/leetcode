@@ -8,10 +8,8 @@ package question.动态规划;
  */
 public class _44_通配符匹配 {
 
-    public static void main(String[] args) {
-        isMatch("acb", "*cf");
-    }
-    public static boolean isMatch(String s, String p) {
+
+    public boolean isMatch(String s, String p) {
         int sp = 0; // s的指针
         int pp = 0; // p的指针
         // 主要是为了解决*的匹配
