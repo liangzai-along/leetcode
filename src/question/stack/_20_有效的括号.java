@@ -30,7 +30,7 @@ public class _20_有效的括号 {
                 stack.push('}');
             } else if (tmp == '[') {
                 stack.push(']');
-            } else if (stack.isEmpty() || tmp != stack.pop()) { // 这里判断需要记住一下子
+            } else if (stack.isEmpty() || tmp != stack.pop()) { // 这里判断需要记住一下子, 前面主要是为了判断一开始就是右括号的情况
                 return false;
             }
         }
